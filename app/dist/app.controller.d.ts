@@ -1,3 +1,4 @@
 export declare class AppController {
-    test(message: any): void;
+    test1(data: any): any;
+    test2(data: any): any;
 }

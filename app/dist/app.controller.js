@@ -12,17 +12,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const microservices_1 = require("@nestjs/microservices");
 let AppController = class AppController {
-    test(message) {
-        console.log('function called OK');
-        console.log(message);
+    test1(data) {
+        console.log('message pattern handler called OK');
+        console.log(data);
+    }
+    test2(data) {
+        console.log('event pattern handler called OK');
+        console.log(data);
     }
 };
 __decorate([
     microservices_1.MessagePattern('sms.send'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], AppController.prototype, "test", null);
+    __metadata("design:returntype", Object)
+], AppController.prototype, "test1", null);
+__decorate([
+    microservices_1.EventPattern('sms.event'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Object)
+], AppController.prototype, "test2", null);
 AppController = __decorate([
     common_1.Controller()
 ], AppController);
